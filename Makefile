@@ -1,39 +1,25 @@
 DESTINATION = dist
 
-SERVER_DIR = server
-SERVER_BINARY = $(SERVER_DIR)/firedragon
+EMBER_BUILD_CMD = ember build
+EMBER_BUILD_OPTIONS = -prod
 
-CLIENT_DIR = client
-CLIENT_DIST = $(CLIENT_DIR)/dist/*
+EMBER_TEST_CMD = ember test
+EMBER_TEST_OPTIONS =
 
 $(DESTINATION): FORCE
-	# Create directory structure
-	mkdir -p $(DESTINATION) $(DESTINATION)/public
-
-	# Build client (Ember.js)
-	$(MAKE) -C $(CLIENT_DIR)
-	mv $(CLIENT_DIST) $(DESTINATION)/public
-
-	# Compile server binary
-	$(MAKE) -C $(SERVER_DIR)
-	mv $(SERVER_BINARY) $(DESTINATION)
+	$(EMBER_BUILD_CMD) $(EMBER_BUILD_OPTIONS) --output-path $(DESTINATION)/
 
 setup:
-	$(MAKE) -C $(SERVER_DIR) setup
-	$(MAKE) -C $(CLIENT_DIR) setup
+	npm install
+	bower install
 .PHONY: setup
 
-test:
-	$(MAKE) -C $(SERVER_DIR) test
-	$(MAKE) -C $(CLIENT_DIR) test
-
+test: FORCE
+	$(EMBER_TEST_CMD) $(EMBER_TEST_OPTIONS)
 .PHONY: test
 
 clean:
 	rm -rf $(DESTINATION)
-	$(MAKE) -C $(SERVER_DIR) clean
-	$(MAKE) -C $(CLIENT_DIR) clean
-
 .PHONY: clean
 
 FORCE:

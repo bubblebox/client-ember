@@ -1,26 +1,53 @@
-# Fire Dragon
+# Firedragon
 
-[![Build Status](https://travis-ci.org/ariejan/firedragon.svg?branch=master)](https://travis-ci.org/ariejan/firedragon)
+This README outlines the details of collaborating on this Ember application.
+A short introduction of this app could easily go here.
 
-A modern content hosting service builtd on Go and Ember.js.
+## Prerequisites
 
-See [the wiki](https://github.com/ariejan/firedragon/wiki) for more details.
+You will need the following things properly installed on your computer.
 
-## Running
+* [Git](http://git-scm.com/)
+* [Node.js](http://nodejs.org/) (with NPM)
+* [Bower](http://bower.io/)
+* [Ember CLI](http://www.ember-cli.com/)
+* [PhantomJS](http://phantomjs.org/)
 
-_Fire Dragon is a work in progress and will probably break a lot at this time._
+## Installation
 
-If all you want is a working application, simple run:
+* `git clone <repository-url>` this repository
+* change into the new directory
+* `npm install`
+* `bower install`
 
- * make setup && make
- * cd dist
- * ./firedragon and hop over to [http://admin.127.0.0.1.xip.io:8042](http://admin.127.0.0.1.xip.io:8042)
+## Running / Development
 
-This handy makefile builds both client and server and puts them in the `dist/`
-directory.
+* `ember server`
+* Visit your app at [http://localhost:4200/dashboard](http://localhost:4200/dashboard).
 
-## Running tests
+### Code Generators
 
-There's a combined tests target: `make test` that will run tests for
-both the server and client. Tests can be run separately for each component,
-again by running `make test` in either the `client` or `server` directory.
+Make use of the many generators for code, try `ember help generate` for more details
+
+### Running Tests
+
+* `ember test`
+* `ember test --server`
+
+### Building
+
+* `ember build` (development)
+* `ember build --environment production` (production)
+
+### Deploying
+
+Specify what it takes to deploy your app.
+
+## Further Reading / Useful Links
+
+* [ember.js](http://emberjs.com/)
+* [ember-cli](http://www.ember-cli.com/)
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
